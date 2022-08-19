@@ -1,5 +1,4 @@
-import { sendRequest } from "./dataAccess.js"
-
+import { sendRequest, deleteRequest } from "./dataAccess.js"
 
 
 //copy/pasted from workBook

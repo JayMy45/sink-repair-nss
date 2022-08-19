@@ -1,4 +1,4 @@
-const mainContainer = document.querySelector("#container")
+const mainContainer = document.querySelector("#container") //added so that sendRequest would work...will have to observe how it works!
 
 const applicationState = {
     requests: []
@@ -40,3 +40,12 @@ export const getRequests = () => {
     return applicationState.requests.map(requests => ({ ...requests }))
 }
 
+
+export const deleteRequest = (id) => {
+    return fetch(`${API}/requests/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
