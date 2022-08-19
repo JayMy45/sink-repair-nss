@@ -2,6 +2,13 @@
 //import getRequests function from dataAccess.js (this is where the database is fetched to and data can be accessed as in the title)
 import { getRequests } from "./dataAccess.js";
 
+//declare function to access request of data named convertRequestToListElement
+
+const convertRequestToListElement = (request) => {
+    let html = ''
+    return html = `<li>${request.description} </li>`
+}
+
 
 //declare export function to modulate requests.
 export const Request = () => {
@@ -12,7 +19,7 @@ export const Request = () => {
     //using .map method iterate the request and create unordered list (may need to take a look at old code from kneel diamonds)
     let html = `
     <ul>
-        ${requests.map().join("")
+        ${requests.map(convertRequestToListElement).join("")
         }
     </ul>
 `

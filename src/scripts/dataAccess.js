@@ -20,3 +20,4 @@ export const fetchRequests = () => {
 export const getRequests = () => {
     return applicationState.requests.map(requests => ({ ...requests }))
 }
+
