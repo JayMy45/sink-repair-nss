@@ -1,7 +1,5 @@
-import { getRequests } from "./dataAccess.js"
+import { sendRequest } from "./dataAccess.js"
 
-
-const requests = getRequests()
 
 
 //copy/pasted from workBook
