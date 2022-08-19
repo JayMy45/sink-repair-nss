@@ -1,3 +1,5 @@
+import { Request } from "./Requests.js"
+
 
 export const SinkRepair = () => {
     return `
