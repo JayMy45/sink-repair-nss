@@ -1,18 +1,35 @@
-import { fetchRequests } from "./dataAccess.js"
+import { fetchRequests, fetchPlumbers } from "./dataAccess.js"
 import { SinkRepair } from "./SinkRepair.js"
+
 
 
 export const mainContainer = document.querySelector("#container")
 
+
+// *** second iteration of render() function with fetchPlumbers added...
 const render = () => {
-    fetchRequests().then(
-        () => {
-            mainContainer.innerHTML = SinkRepair()
-        }
-    )
+    fetchRequests()
+        .then(() => fetchPlumbers())
+        .then(
+            () => {
+                mainContainer.innerHTML = SinkRepair()
+            }
+        )
 }
 
 render()
+
+// **** first iteration of render function that only invoked fetchRequests function.
+// const render = () => {
+//     fetchRequests()
+//     .then(
+//         () => {
+//             mainContainer.innerHTML = SinkRepair()
+//         }
+//     )
+// }
+
+// render()
 
 mainContainer.addEventListener(
     "stateChanged",

@@ -40,6 +40,10 @@ export const getRequests = () => {
     return applicationState.requests.map(requests => ({ ...requests }))
 }
 
+export const getPlumbers = () => {
+    return applicationState.plumbers.map(plumber => ({ ...plumber }))
+}
+
 
 export const deleteRequest = (id) => {
     return fetch(`${API}/requests/${id}`, { method: "DELETE" })
@@ -50,12 +54,12 @@ export const deleteRequest = (id) => {
         )
 }
 
-// export const fetchRequests = () => {
-//     return fetch(`${API}/plumbers`)
-//         .then(response => response.json())
-//         .then(
-//             (data) => {
-//                 applicationState.plumbers = data
-//             }
-//         )
-// }
+export const fetchPlumbers = () => {
+    return fetch(`${API}/plumbers`)
+        .then(response => response.json())
+        .then(
+            (data) => {
+                applicationState.plumbers = data
+            }
+        )
+}

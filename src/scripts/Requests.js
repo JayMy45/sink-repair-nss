@@ -1,6 +1,6 @@
 //this module will create html code of the request data provided from the database.
 //import getRequests function from dataAccess.js (this is where the database is fetched to and data can be accessed as in the title)
-import { getRequests, deleteRequest } from "./dataAccess.js";
+import { getRequests, deleteRequest, getPlumbers } from "./dataAccess.js";
 
 //declare function to access request of data named convertRequestToListElement
 
@@ -25,21 +25,37 @@ mainContainer.addEventListener("click", click => {  //click listener for delete 
 })
 
 const convertRequestToListElement = (request) => {
+
+    const plumbers = getPlumbers()
+
     let html = ''
     return `
     <li>
         ${request.description}
+        <select class="plumbers" id="plumbers">
+        <option value="">Choose</option>
+        ${plumbers.map(
+        plumber => {
+            return `<option value="${request.id}--${plumber.id}">${plumber.name}</option>`
+        }
+    ).join("")
+        }
+    </select>
+    
         <button class="request__delete"
                 id="request--${request.id}">
             Delete
         </button>
     </li>
+
+
 `
 }
 
 
 //declare export function to modulate requests.
 export const Request = () => {
+
 
     //declare/define variable to store invoked getRequest function imported from dataAccess.js
     const requests = getRequests() //invoking getRequests inside functions allows for site-directed options(?)
@@ -49,8 +65,7 @@ export const Request = () => {
     <ul>
         ${requests.map(convertRequestToListElement).join("")
         }
-    </ul>
-`
+    </ul>`
 
     return html
 }
