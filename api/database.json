@@ -9,7 +9,38 @@
       "name": "Merle"
     }
   ],
-  "completions": [],
+  "completions": [
+    {
+      "requestId": "3",
+      "plumberId": "1",
+      "date_created": 1661198530685,
+      "id": 1
+    },
+    {
+      "requestId": 3,
+      "plumberId": 1,
+      "date_created": 1661198626256,
+      "id": 2
+    },
+    {
+      "requestId": 3,
+      "plumberId": 2,
+      "date_created": 1661198640525,
+      "id": 3
+    },
+    {
+      "requestId": 3,
+      "plumberId": 2,
+      "date_created": 1661198762126,
+      "id": 4
+    },
+    {
+      "requestId": 3,
+      "plumberId": 1,
+      "date_created": 1661198792407,
+      "id": 5
+    }
+  ],
   "requests": [
     {
       "id": 1,
@@ -24,6 +55,13 @@
       "budget": "400",
       "neededBy": "2022-08-25",
       "id": 2
+    },
+    {
+      "description": "There's a snake in my boots",
+      "address": "1997 ToyStory Ln",
+      "budget": "2003",
+      "neededBy": "2022-08-23",
+      "id": 3
     }
   ]
 }

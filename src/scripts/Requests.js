@@ -1,6 +1,6 @@
 //this module will create html code of the request data provided from the database.
 //import getRequests function from dataAccess.js (this is where the database is fetched to and data can be accessed as in the title)
-import { getRequests, deleteRequest, getPlumbers } from "./dataAccess.js";
+import { getRequests, deleteRequest, getPlumbers, saveCompletion } from "./dataAccess.js";
 
 //declare function to access request of data named convertRequestToListElement
 
@@ -16,6 +16,37 @@ document.addEventListener(
 )
 
 const mainContainer = document.querySelector("#container")
+
+mainContainer.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.id === "plumbers") {
+            const [requestId, plumberId] = event.target.value.split("--")
+
+            /*
+                This object should have 3 properties
+                   1. requestId
+                   2. plumberId
+                   3. date_created
+            */
+            const completion = {
+                requestId: parseInt(requestId),
+                plumberId: parseInt(plumberId),
+                date_created: Date.now()
+            }
+
+            /*
+                Invoke the function that performs the POST request
+                to the `completions` resource for your API. Send the
+                completion object as a parameter.
+             */
+            saveCompletion(completion)
+        }
+    }
+)
+
+
+
 
 mainContainer.addEventListener("click", click => {  //click listener for delete button...
     if (click.target.id.startsWith("request--")) {
