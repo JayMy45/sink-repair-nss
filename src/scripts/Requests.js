@@ -8,7 +8,9 @@ document.addEventListener(
     "click",
     (event) => {
         if (event.target.id.startsWith("request--")) {//add click event to target button at the id specified
-            deleteRequest() //call function to print permanent changes to page.
+
+            //*** no need to call function to print permanent changes to page. ***//
+            deleteRequest()
         }
     }
 )
