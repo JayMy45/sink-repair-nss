@@ -7,7 +7,7 @@ import { getRequests, deleteRequest } from "./dataAccess.js";
 document.addEventListener(
     "click",
     (event) => {
-        if (event.target.id.startsWith("request")) {//add click event to target button at the id specified
+        if (event.target.id.startsWith("request--")) {//add click event to target button at the id specified
             deleteRequest() //call function to print permanent changes to page.
         }
     }

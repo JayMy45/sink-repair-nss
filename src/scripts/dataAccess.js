@@ -49,3 +49,13 @@ export const deleteRequest = (id) => {
             }
         )
 }
+
+// export const fetchRequests = () => {
+//     return fetch(`${API}/plumbers`)
+//         .then(response => response.json())
+//         .then(
+//             (data) => {
+//                 applicationState.plumbers = data
+//             }
+//         )
+// }
