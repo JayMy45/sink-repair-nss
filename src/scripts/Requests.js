@@ -58,7 +58,6 @@ mainContainer.addEventListener("click", click => {  //click listener for delete 
 const convertRequestToListElement = (request) => {
 
     const plumbers = getPlumbers()
-
     const completions = getCompletions()
 
     const foundCompletion = completions.find(
