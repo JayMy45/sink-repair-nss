@@ -68,17 +68,17 @@ const convertRequestToListElement = (request) => {
 
     let html = ''
     if (foundCompletion) {
-        html += `<li>
+        html += `<div id="serviceRequest__list"><li class="request__completion">
         ${request.description}
         <button class="request__delete"
                 id="request--${request.id}">
             Delete
         </button>
-    </li>`
+    </li><div>`
 
     } else {
         html += `
-    <li>
+    <li class="request__incomplete">
         ${request.description}
         <select class="plumbers" id="plumbers">
         <option value="">Choose</option>
@@ -111,7 +111,7 @@ export const Request = () => {
 
     //using .map method iterate the request and create unordered list (may need to take a look at old code from kneel diamonds)
     let html = `
-    <ul>
+    <ul class="no-bullets">
         ${requests.map(convertRequestToListElement).join("")
         }
     </ul>`

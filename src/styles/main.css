@@ -31,3 +31,33 @@ h6 {
 	color: rgba(250, 250, 210, 0.739);
 	font-size: 1rem;
 }
+
+.request__completion {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgb(205, 133, 133);
+	padding: 7px;
+	border: .5px solid black;
+}
+
+.request__incomplete {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgb(99, 130, 99);
+	color: white;
+	padding: 7px;
+	border: .5px solid black;
+}
+
+.request__delete {
+	background-color: blueviolet;
+	color: white;
+}
+
+ul.no-bullets {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
