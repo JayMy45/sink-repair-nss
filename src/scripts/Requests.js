@@ -1,6 +1,6 @@
 //this module will create html code of the request data provided from the database.
 //import getRequests function from dataAccess.js (this is where the database is fetched to and data can be accessed as in the title)
-import { getRequests, deleteRequest, getPlumbers, saveCompletion } from "./dataAccess.js";
+import { getRequests, deleteRequest, getPlumbers, saveCompletion, getCompletions } from "./dataAccess.js";
 
 //declare function to access request of data named convertRequestToListElement
 
@@ -10,7 +10,7 @@ document.addEventListener(
         if (event.target.id.startsWith("request--")) {//add click event to target button at the id specified
 
             //*** no need to call function to print permanent changes to page. ***//
-            deleteRequest()
+            //deleteRequest()
         }
     }
 )
@@ -59,18 +59,36 @@ const convertRequestToListElement = (request) => {
 
     const plumbers = getPlumbers()
 
+    const completions = getCompletions()
+
+    const foundCompletion = completions.find(
+        (completion) => {
+            return request.id === completion.requestId
+        }
+    )
+
     let html = ''
-    return `
+    if (foundCompletion) {
+        html += `<li>
+        ${request.description}
+        <button class="request__delete"
+                id="request--${request.id}">
+            Delete
+        </button>
+    </li>`
+
+    } else {
+        html += `
     <li>
         ${request.description}
         <select class="plumbers" id="plumbers">
         <option value="">Choose</option>
         ${plumbers.map(
-        plumber => {
-            return `<option value="${request.id}--${plumber.id}">${plumber.name}</option>`
-        }
-    ).join("")
-        }
+            plumber => {
+                return `<option value="${request.id}--${plumber.id}">${plumber.name}</option>`
+            }
+        ).join("")
+            }
     </select>
     
         <button class="request__delete"
@@ -78,9 +96,10 @@ const convertRequestToListElement = (request) => {
             Delete
         </button>
     </li>
-
-
+        
 `
+    }
+    return html
 }
 
 

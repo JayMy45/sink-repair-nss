@@ -1,8 +1,8 @@
 const mainContainer = document.querySelector("#container") //added so that sendRequest would work...will have to observe how it works!
 
 const applicationState = {
-    requests: []
-
+    requests: [],
+    completions: []
 }
 
 const API = "http://localhost:8088"
@@ -44,6 +44,11 @@ export const getPlumbers = () => {
     return applicationState.plumbers.map(plumber => ({ ...plumber }))
 }
 
+export const getCompletions = () => {
+    return applicationState.completions.map(completion => ({ ...completion }))
+}
+
+
 
 export const deleteRequest = (id) => {
     return fetch(`${API}/requests/${id}`, { method: "DELETE" })
@@ -53,6 +58,7 @@ export const deleteRequest = (id) => {
             }
         )
 }
+
 
 export const fetchPlumbers = () => {
     return fetch(`${API}/plumbers`)
@@ -78,4 +84,14 @@ export const saveCompletion = (userCompletion) => {
         .then(() => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         })
+}
+
+export const fetchCompletion = () => {
+    return fetch(`${API}/completions`)
+        .then(response => response.json())
+        .then(
+            (data) => {
+                applicationState.completions = data
+            }
+        )
 }
