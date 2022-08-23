@@ -35,7 +35,8 @@ h6 {
 .request__completion {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	gap: 40%;
+	/* justify-content: space-between; */
 	background-color: rgb(205, 133, 133);
 	padding: 7px;
 }
@@ -43,11 +44,12 @@ h6 {
 .request__incomplete {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	background-color: rgb(99, 130, 99);
 	color: white;
 	padding: 7px;
 	border: .5px solid black;
+	gap: 20%;
 }
 
 .request__delete {
@@ -63,6 +65,8 @@ ul.no-bullets {
 
 .completedBy {
 	display: flex;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	background-color: lightgray;
+	gap: 43%;
+	padding-left: 10px;
 }
