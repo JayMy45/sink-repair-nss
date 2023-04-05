@@ -9,28 +9,6 @@
       "name": "Merle"
     }
   ],
-  "completions": [
-    {
-      "requestId": 4,
-      "plumberId": 1,
-      "date_created": 1679337277551,
-      "id": 10
-    }
-  ],
-  "requests": [
-    {
-      "description": "Need New tube/shower installed.",
-      "address": "8890 Yes Way",
-      "budget": "5000",
-      "neededBy": "2022-09-07",
-      "id": 4
-    },
-    {
-      "description": "sdfg",
-      "address": "sdfg",
-      "budget": "777",
-      "neededBy": "2023-03-30",
-      "id": 5
-    }
-  ]
+  "completions": [],
+  "requests": []
 }
