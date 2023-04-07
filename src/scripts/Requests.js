@@ -75,6 +75,11 @@ const convertRequestToListElement = (request) => {
                                 ${request.description}
                             </span>
                         </div>
+                        <div>
+                        <span class="request__list-description__2">
+                           Completed
+                        </span>
+                    </div>
                         <div class="request__list-description__3">
                             <button class="request__delete" id="request--${request.id}">
                                 Delete

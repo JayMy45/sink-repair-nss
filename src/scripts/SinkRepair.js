@@ -14,7 +14,6 @@ document.addEventListener(
 
 export const SinkRepair = () => {
     return `
-
     <div>
         <h1>Maude and Merle's Sink Repair</h1>
     </div>  
@@ -33,13 +32,18 @@ export const SinkRepair = () => {
                 </div>
                 <div>
                     <div class="request__completed-by">
-                        <div class="repair__description">
-                            <h3>Description</h3>
-                        </div>
-                        <div class="request__list-description__3">             
+                    
+                            <h3 class="repair__description">Description</h3>
+
+                        <div class="request__list-description__2">             
                             <h3>Completed By</h3>
                         </div>
+
+                        <div class="request__list-description__3">             
+                            <h3>Delete</h3>
+                        </div>
                     </div>
+
                     <div>
                         ${Request()}
                     </div>
