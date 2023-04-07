@@ -14,22 +14,39 @@ document.addEventListener(
 
 export const SinkRepair = () => {
     return `
-    <h1>Maude and Merle's Sink Repair</h1>
-   
-    <section class="serviceForm">
-        ${ServiceForm()}
-    </section>
-   
-    <section class="serviceRequests">
-        <h2>Service Requests</h2>
-            <div class="completedBy">
-                <h3> Description </h2> 
-                <h3>Completed By</h3>
+
+    <div>
+        <h1>Maude and Merle's Sink Repair</h1>
+    </div>  
+
+    <div>
+        <section class="serviceForm">
+            ${ServiceForm()}
+        </section>
+    </div>
+
+   <div>
+        <section class="serviceRequests">
+            <div>
+                <div>
+                    <h2>Service Requests</h2>
+                </div>
+                <div>
+                    <div class="request__completed-by">
+                        <div class="repair__description">
+                            <h3>Description</h3>
+                        </div>
+                        <div class="request__list-description__3">             
+                            <h3>Completed By</h3>
+                        </div>
+                    </div>
+                    <div>
+                        ${Request()}
+                    </div>
+                </div>
             </div>
-            
-                ${Request()}
-            
-    </section>
+        </section>
+    </div>
     `
 }
 
