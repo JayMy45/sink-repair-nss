@@ -21,12 +21,14 @@ export const SinkRepair = () => {
     </section>
    
     <section class="serviceRequests">
-    <h2>Service Requests</h2>
-    <div class="completedBy">
-        <h3> Description </h2> <h3>Completed By</h2>
-        </div>
-       
-            ${Request()}
+        <h2>Service Requests</h2>
+            <div class="completedBy">
+                <h3> Description </h2> 
+                <h3>Completed By</h3>
+            </div>
+            
+                ${Request()}
+            
     </section>
     `
 }

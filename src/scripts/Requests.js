@@ -68,33 +68,46 @@ const convertRequestToListElement = (request) => {
 
     let html = ''
     if (foundCompletion) {
-        html += `<div id="serviceRequest__list"><li class="request__completion">
-        ${request.description}
-        <button class="request__delete"
-                id="request--${request.id}">
-            Delete
-        </button>
-    </li><div>`
+        html += `<li class="no-bullets">
+                    <div class="request__list-complete">
+                        <div>
+                            <span class="request__list-description__1">
+                                ${request.description}
+                            </span>
+                        </div>
+                        <div class="request__list-description__3">
+                            <button class="request__delete" id="request--${request.id}">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                `
 
     } else {
-        html += `
-    <li class="request__incomplete">
-        ${request.description}
-        <select class="plumbers" id="plumbers">
-        <option value="">Choose</option>
-        ${plumbers.map(
-            plumber => {
-                return `<option value="${request.id}--${plumber.id}">${plumber.name}</option>`
-            }
-        ).join("")
-            }
-    </select>
-    
-        <button class="request__delete"
-                id="request--${request.id}">
-            Delete
-        </button>
-    </li>
+        html += `<li class="no-bullets">
+                    <div class="request__list-incomplete">
+                            <div>
+                                <span class="request__list-description__1">                    
+                                    ${request.description}
+                                </span>
+                            </div>                        
+                            <div class="request__list-description__2">
+                                <select class="plumbers" id="plumbers">
+                                    <option value="">
+                                    Choose
+                                    </option>
+                                    ${plumbers.map(plumber => { return `<option value="${request.id}--${plumber.id}">${plumber.name}</option>` }).join("")}
+                                </select>
+                            </div>
+                            <div class="request__list-description__3">
+                                <button class="request__delete"
+                                        id="request--${request.id}">
+                                    Delete
+                                </button>
+                            </div>
+                    </div>
+                </li>
         
 `
     }
@@ -111,10 +124,13 @@ export const Request = () => {
 
     //using .map method iterate the request and create unordered list (may need to take a look at old code from kneel diamonds)
     let html = `
-    <ul class="no-bullets">
-        ${requests.map(convertRequestToListElement).join("")
+    <div class="">
+        <ul>
+            ${requests.map(convertRequestToListElement).join("")
         }
-    </ul>`
+        </ul>
+        </div>
+    `
 
     return html
 }

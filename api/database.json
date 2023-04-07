@@ -9,6 +9,28 @@
       "name": "Merle"
     }
   ],
-  "completions": [],
-  "requests": []
+  "completions": [
+    {
+      "requestId": 2,
+      "plumberId": 1,
+      "date_created": 1680895463738,
+      "id": 1
+    }
+  ],
+  "requests": [
+    {
+      "description": "DSAF",
+      "address": "fads",
+      "budget": "222",
+      "neededBy": "0022-02-22",
+      "id": 2
+    },
+    {
+      "description": "asdf",
+      "address": "asdf",
+      "budget": "444",
+      "neededBy": "0004-04-04",
+      "id": 3
+    }
+  ]
 }
