@@ -9,7 +9,14 @@
       "name": "Merle"
     }
   ],
-  "completions": [],
+  "completions": [
+    {
+      "requestId": 4,
+      "plumberId": 1,
+      "date_created": 1681055562771,
+      "id": 1
+    }
+  ],
   "requests": [
     {
       "description": "There's a snake in my toilet",
@@ -24,6 +31,41 @@
       "budget": "5544",
       "neededBy": "2023-04-28",
       "id": 2
+    },
+    {
+      "description": "asdf",
+      "address": "asdf",
+      "budget": "333",
+      "neededBy": "2023-04-20",
+      "id": 3
+    },
+    {
+      "description": "asdf",
+      "address": "adsf",
+      "budget": "333",
+      "neededBy": "0033-03-31",
+      "id": 4
+    },
+    {
+      "description": "oauf",
+      "address": "asd[foij",
+      "budget": "333",
+      "neededBy": "4444-04-04",
+      "id": 5
+    },
+    {
+      "description": "aefr",
+      "address": "fads",
+      "budget": "333",
+      "neededBy": "0333-03-31",
+      "id": 6
+    },
+    {
+      "description": "sdaf",
+      "address": "fdas",
+      "budget": "32",
+      "neededBy": "",
+      "id": 7
     }
   ]
 }

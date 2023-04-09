@@ -2,8 +2,9 @@
 //import getRequests function from dataAccess.js (this is where the database is fetched to and data can be accessed as in the title)
 import { getRequests, deleteRequest, getPlumbers, saveCompletion, getCompletions } from "./dataAccess.js";
 
-//declare function to access request of data named convertRequestToListElement
+const mainContainer = document.querySelector("#container")
 
+//declare function to access request of data named convertRequestToListElement
 document.addEventListener(
     "click",
     (event) => {
@@ -14,8 +15,6 @@ document.addEventListener(
         }
     }
 )
-
-const mainContainer = document.querySelector("#container")
 
 mainContainer.addEventListener(
     "change",
@@ -44,9 +43,6 @@ mainContainer.addEventListener(
         }
     }
 )
-
-
-
 
 mainContainer.addEventListener("click", click => {  //click listener for delete button...
     if (click.target.id.startsWith("request--")) {
