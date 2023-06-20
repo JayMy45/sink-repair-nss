@@ -119,9 +119,9 @@ const convertRequestToListElement = (request) => {
 //declare export function to modulate requests.
 export const Request = () => {
 
+    const requests = getRequests() //invoking getRequests inside functions allows for site-directed options(?)
 
     //declare/define variable to store invoked getRequest function imported from dataAccess.js
-    const requests = getRequests() //invoking getRequests inside functions allows for site-directed options(?)
 
     //using .map method iterate the request and create unordered list (may need to take a look at old code from kneel diamonds)
     let html = `
